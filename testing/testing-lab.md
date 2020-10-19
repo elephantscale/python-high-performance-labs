@@ -8,7 +8,7 @@
     * Add tests
     
 ### Builds on:
-    * [Modeling lab](modeling-lab.md)
+    * [Modeling lab](../modeling/modeling-lab.md)
     * Lecture notes
     
 ### Time:
