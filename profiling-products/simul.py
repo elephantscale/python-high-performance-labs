@@ -1,5 +1,7 @@
 from matplotlib import pyplot as plt
 from matplotlib import animation
+from random import uniform
+import timeit
 
 class Particle:
 
@@ -32,6 +34,17 @@ class ParticleSimulator:
 
                 p.x += d_x
                 p.y += d_y
+
+    # def evolve(self, dt):
+    #     timestep = 0.00001
+    #     nsteps = int(dt/timestep)
+
+    #     # First, change the loop order
+    #     for p in self.particles:
+    #         t_x_ang = timestep * p.ang_speed
+    #         for i in range(nsteps):
+    #             norm = (p.x**2 + p.y**2)**0.5
+    #             p.x, p.y = p.x - t_x_ang*p.y/norm, p.y + t_x_ang * p.x/norm
 
 def visualize(simulator):
 

@@ -1,0 +1,14 @@
+## How to assemble labs
+##    ./assemble-labs.sh
+
+
+## From this dir
+modeling  
+testing  
+timing  
+profiling
+profiling-products
+
+## from other repos
+$ES_HOME/python-labs/visualization
+

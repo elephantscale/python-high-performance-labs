@@ -16,22 +16,17 @@ class ParticleSimulator:
     def __init__(self, particles):
         self.particles = particles
 
-    def evolve(self, dt):
+    def evolve_fast(self, dt):
         timestep = 0.00001
-        nsteps = int(dt/timestep)
+        nsteps = int(dt / timestep)
 
-        for i in range(nsteps):
-            for p in self.particles:
-
-                norm = (p.x**2 + p.y**2)**0.5
-                v_x = (-p.y)/norm
-                v_y = p.x/norm
-
-                d_x = timestep * p.ang_speed * v_x
-                d_y = timestep * p.ang_speed * v_y
-
-                p.x += d_x
-                p.y += d_y
+        # Loop order is changed
+        for p in self.particles:
+            t_x_ang = timestep * p.ang_speed
+            for i in range(nsteps):
+                norm = (p.x ** 2 + p.y ** 2) ** 0.5
+                p.x, p.y = (p.x - t_x_ang * p.y / norm,
+                            p.y + t_x_ang * p.x / norm)
 
 def visualize(simulator):
 
@@ -53,7 +48,7 @@ def visualize(simulator):
 
     def animate(i):
         # We let the particle evolve for 0.1 time units
-        simulator.evolve(0.01)
+        simulator.evolve_fast(0.01)
         X = [p.x for p in simulator.particles]
         Y = [p.y for p in simulator.particles]
 
