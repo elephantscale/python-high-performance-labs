@@ -13,7 +13,7 @@
     * Previous labs
     
 ### Time:
-    * 30 hour
+    * 30 min
          
 ### Step 1) Prepare the code for profiling 
 
@@ -23,6 +23,7 @@
 ### Step 2) Run profiling
 
 * On the command line, in this directory, run
+
 ```shell script
 python -m cProfile benchmark.py
 ```
@@ -113,7 +114,7 @@ Now run the "fast" results and check how fast they are
 time python benchmark_fast.py
 ```         
 
-* You should get someting like
+* You should get something like
 ```text
 real    0m3.980s
 user    0m3.938s
@@ -122,5 +123,5 @@ sys     0m0.041s
 
 ```
 
-## Congratulation!
+### Congratulation!
 * You have achieved 20% improvements!
