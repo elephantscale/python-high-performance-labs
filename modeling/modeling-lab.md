@@ -12,10 +12,18 @@
     * Lecture notes
     
 ### Time:
-    * 1 hour
+    * 30 min
          
-### Step 1) Create a Python mode called `simul.py`
+### Step 1) Prepare code for simulating particle motion 
 
+* Create a directory `modeling`
+* In this directory, create a Python mode called `simul.py`
+* In `simul.py`, start with the imports that you will need
+
+```python
+from matplotlib import pyplot as plt
+from matplotlib import animation
+```
 ### Step 2) Particle
 
 * Create a class to store particle representation
