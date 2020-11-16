@@ -27,7 +27,7 @@ from matplotlib import animation
 ### Step 2) Particle
 
 * Create a class to store particle representation
-* It stores the particle positions, x and y, and their angular velocity, ang_vel:
+* It stores the particle positions, `x` and `y`, and their angular speed, `ang_speed`:
 
 ```python
 class Particle:
@@ -59,8 +59,8 @@ class ParticleSimulator:
                     v_y = p.x/norm 
 
                     # 2. calculate the displacement 
-                    d_x = timestep * p.ang_vel * v_x 
-                    d_y = timestep * p.ang_vel * v_y 
+                    d_x = timestep * p.ang_speed * v_x 
+                    d_y = timestep * p.ang_speed * v_y 
                     
                     # 3. repeat for all the time steps
                     p.x += d_x 
@@ -131,4 +131,4 @@ python simul.py
 
 * Observe the results in motion
 
-![](motion.png)
+![](../artwork/motion.png)

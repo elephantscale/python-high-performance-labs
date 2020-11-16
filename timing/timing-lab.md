@@ -1,22 +1,55 @@
-# Time Lab
+# Timing Lab
 
-* Exercise with timing the running code
+* Exercise with benchmarking and timing the running code
 
 ## Lab Goals:
 
-1. Get familiar with running the timing command
+* Get familiar with running the timing command
     
 ### Builds on:
     * Previous labs
     * Lecture notes
     
 ### Time:
-    * 1 hour
+    * 30 min
 
-### Step 1) Time the benchmark.py module
-* Prepare a new directory, `timing
-* Copy the modulea `simul.py` and `benchmark.py` into this directory
-* On the command line, run the `time` command
+### Step 1) Prepare the `benchmark.py` module
+* Prepare a new directory, called `timing`
+* Copy the module `simul.py` into this directory
+* Create a file `benchmark.py` in this directory
+* Add the following to `benchmark.py`
+
+```python
+from simul import ParticleSimulator
+from simul import Particle
+from random import uniform 
+
+def benchmark(): 
+    particles = [Particle(uniform(-1.0, 1.0), 
+                          uniform(-1.0, 1.0), 
+                          uniform(-1.0, 1.0)) 
+                  for i in range(1000)] 
+
+    simulator = ParticleSimulator(particles) 
+    simulator.evolve(0.1) 
+
+if __name__ == '__main__': 
+    benchmark()
+```
+* Run the `benchmark.py` module and verify that it runs
+
+```shell script
+python benchmark.py
+```
+
+* You can verify the load on the system, with a display similar to the one below, 
+but perhaps using your own way of watching the load
+
+ ![](../artwork/load.png)
+ 
+### Step 2) Time the benchmark.py module
+
+* On the command line, run the timing command
  
 ```shell script
 time python benchmark.py
@@ -31,7 +64,9 @@ sys     0m0.025s
 
 ```
 
-### Step 2) Use IPython
+* Can you explain what each of the three timings measures?
+
+### Step 3) Use IPython
 * If you do not have it, install IPython
 
 ```shell script
@@ -51,16 +86,21 @@ from benchmark import benchmark
 %timeit benchmark() 
 ```
 
-* Note that the last command will take a long time
+* **Note that the last command will take a long time**
+
 * Observe the result similar to the one below
 ```text
 4.33 s ± 10.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 ```
 
-### Step 3) Bonus lab
+### Congratulations!
+
+* You can time your Python code now
+
+### Step 4) Bonus lab
 * Write a Jupyter Notebook for the IPython shell above
-* It will work there as well
+* Timing will work there as well
 
 ### Windows user advice
 
