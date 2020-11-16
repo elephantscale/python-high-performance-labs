@@ -1,1 +1,1 @@
-# python-high-performance-solutions-labs
+# python-high-performance-labs
