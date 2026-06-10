@@ -1,8 +1,5 @@
-## How to assemble labs
-##    ./assemble-labs.sh
+## Lab order (teaching sequence)
 
-
-## From this dir
 modeling
 testing
 timing
@@ -11,8 +8,4 @@ architecture
 collections
 numpy
 cython
-profiling-products
-
-## from other repos
-$ES_HOME/python-labs/visualization
-
+profiling-products    # optional bonus
