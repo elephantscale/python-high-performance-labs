@@ -1,11 +1,19 @@
-## Lab order (teaching sequence)
+## Lab order and teaching plan (one-day course)
+##
+## Tiers (so all the labs fit in ~6 teaching hours):
+##   [hands-on]  students do it themselves
+##   [demo]      instructor runs it live; watching is enough
+##   [optional]  take-home / cover only if time allows
 
-modeling
-testing
-timing
-profiling
-architecture
-collections
-numpy
-cython
-profiling-products    # optional bonus
+modeling              # [hands-on]  builds the simulator used throughout (short)
+testing               # [optional]  take-home; reinforces, not essential live
+timing                # [demo]      show time / timeit / IPython
+profiling             # [hands-on]  the core skill of the course
+architecture          # [demo]      dis + cache effects, better watched than typed
+collections           # [hands-on]  Big-O speedups (set vs list, deque) - high engagement
+numpy                 # [hands-on]  vectorization - the biggest payoff
+cython                # [demo]      show the ~50x speedup; hands-on optional/take-home
+profiling-products    # [optional]  bonus profiling exercise
+
+## Rough budget: ~3 h lecture + ~3 h labs (4 hands-on + the rest demo/optional).
+## Adjust tiers to your group's pace.
