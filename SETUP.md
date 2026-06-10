@@ -44,11 +44,17 @@ Tested with Python 3.12 (any 3.10+ is fine).
 
 ## Quick sanity check
 
-After setup, confirm the toolchain is complete:
+Run the included verifier — it checks every dependency and actually compiles a
+Cython module (the real test of the compiler + headers):
+
+```bash
+bash verify.sh
+```
+
+It prints a PASS/FAIL line per check and ends with **"VM is READY for the labs."**
+when everything is in place. A fast manual spot-check, if you prefer:
 
 ```bash
 python3 -c "import numpy, matplotlib, IPython, Cython; print('python deps OK')"
 gcc --version | head -1
 ```
-
-Both should succeed — that covers everything the labs need.
