@@ -1,5 +1,7 @@
 # Timing Lab
 
+> **Lab tier — demo:** your instructor runs this live; watching is enough.
+
 * Exercise with benchmarking and timing the running code
 
 ## Lab Goals:

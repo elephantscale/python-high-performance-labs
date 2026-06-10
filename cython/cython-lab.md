@@ -1,5 +1,7 @@
 # Cython Lab
 
+> **Lab tier — demo:** your instructor runs this live; hands-on is optional/take-home.
+
 * Compile a hot function to native code and measure the speedup
 
 ## Lab Goals:

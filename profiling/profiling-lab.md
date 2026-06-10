@@ -1,5 +1,7 @@
 # Profiling Lab
 
+> **Lab tier — hands-on:** do this one yourself.
+
 * Learn how to run profile
 
 ## Lab Goals:

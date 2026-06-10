@@ -1,5 +1,7 @@
 # Modeling Lab
 
+> **Lab tier — hands-on:** do this one yourself.
+
 * Prepare the code modeling particle motion
 
 ## Lab Goals:

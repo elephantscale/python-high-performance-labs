@@ -1,5 +1,7 @@
 # Profiling Lab
 
+> **Lab tier — optional:** bonus profiling exercise; take-home.
+
 ### This is an optional lab for the "High Performance Python" course
 
 ### Step 1: Run the V1 of the code

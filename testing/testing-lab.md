@@ -1,5 +1,7 @@
 # Testing Lab
 
+> **Lab tier — optional:** take-home / cover if time allows.
+
 * Prepare the tests for the code, lay the foundation for optimization
 
 ## Lab Goals:

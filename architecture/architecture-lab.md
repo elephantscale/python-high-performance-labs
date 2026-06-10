@@ -1,5 +1,7 @@
 # Execution Architecture Lab
 
+> **Lab tier — demo:** your instructor runs this live; watching is enough.
+
 * Explore how CPython runs your code, and how the memory hierarchy affects speed
 
 ## Lab Goals:

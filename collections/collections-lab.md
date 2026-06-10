@@ -1,5 +1,7 @@
 # Collections Lab
 
+> **Lab tier — hands-on:** do this one yourself.
+
 * Pick the right data structure and measure the difference
 
 ## Lab Goals:

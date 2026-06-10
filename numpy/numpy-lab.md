@@ -1,5 +1,7 @@
 # NumPy Lab
 
+> **Lab tier — hands-on:** do this one yourself.
+
 * Rewrite the particle simulator with NumPy and measure the speedup
 
 ## Lab Goals:
