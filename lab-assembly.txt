@@ -3,10 +3,14 @@
 
 
 ## From this dir
-modeling  
-testing  
-timing  
+modeling
+testing
+timing
 profiling
+architecture
+collections
+numpy
+cython
 profiling-products
 
 ## from other repos
