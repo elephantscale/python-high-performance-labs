@@ -45,16 +45,27 @@ Tested with Python 3.12 (any 3.10+ is fine).
 ## Quick sanity check
 
 Run the included verifier — it checks every dependency and actually compiles a
-Cython module (the real test of the compiler + headers):
+Cython module (the real test of the compiler).
+
+**Any OS (recommended):**
+
+```bash
+python verify.py       # Windows
+python3 verify.py      # macOS / Linux
+```
+
+**Linux/macOS bash alternative:**
 
 ```bash
 bash verify.sh
 ```
 
-It prints a PASS/FAIL line per check and ends with **"VM is READY for the labs."**
-when everything is in place. A fast manual spot-check, if you prefer:
+Either prints a PASS/FAIL line per check and ends with **"...READY for the labs."**
+when everything is in place.
 
-```bash
-python3 -c "import numpy, matplotlib, IPython, Cython; print('python deps OK')"
-gcc --version | head -1
-```
+### Windows note
+
+The **Cython lab** needs a C compiler. On Windows that is the
+**Microsoft C++ Build Tools** (Visual Studio Build Tools → "Desktop development
+with C++"), not gcc. `verify.py` will tell you if it is missing. The other seven
+labs are pure Python and run on Windows without it.
