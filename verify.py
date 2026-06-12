@@ -57,29 +57,46 @@ try:
 except Exception as e:
     bad(f"matplotlib savefig failed: {e}")
 
-print("== Cython end-to-end build (the real compiler test) ==")
+print("== Cython end-to-end build (mirrors the Cython lab) ==")
 try:
     import Cython  # noqa: F401
     tmp = tempfile.mkdtemp()
-    with open(os.path.join(tmp, "hello.pyx"), "w") as f:
-        f.write("def add(int a, int b):\n    return a + b\n")
+    # Uses the same features as the lab: a typed memoryview, boundscheck off,
+    # and numpy's include path -- so a PASS means the actual lab will build.
+    with open(os.path.join(tmp, "lab_demo.pyx"), "w") as f:
+        f.write(textwrap.dedent("""
+            import cython
+
+            @cython.boundscheck(False)
+            @cython.wraparound(False)
+            def csum(double[:] a):
+                cdef double s = 0.0
+                cdef int i
+                for i in range(a.shape[0]):
+                    s += a[i]
+                return s
+        """))
     with open(os.path.join(tmp, "setup.py"), "w") as f:
         f.write(textwrap.dedent("""
             from setuptools import setup
             from Cython.Build import cythonize
-            setup(ext_modules=cythonize("hello.pyx"))
+            import numpy as np
+            setup(ext_modules=cythonize("lab_demo.pyx"),
+                  include_dirs=[np.get_include()])
         """))
     build = subprocess.run(
         [sys.executable, "setup.py", "build_ext", "--inplace"],
         cwd=tmp, capture_output=True, text=True)
     if build.returncode == 0:
         chk = subprocess.run(
-            [sys.executable, "-c", "import hello; assert hello.add(2, 3) == 5"],
+            [sys.executable, "-c",
+             "import numpy as np, lab_demo; "
+             "assert abs(lab_demo.csum(np.array([1.0, 2.0, 3.0])) - 6.0) < 1e-9"],
             cwd=tmp, capture_output=True, text=True)
         if chk.returncode == 0:
-            ok("Cython compiles and imports (C compiler OK)")
+            ok("Cython lab-style build works (memoryviews + numpy + compiler)")
         else:
-            bad("Cython built but import failed: " + chk.stderr.strip()[:200])
+            bad("Cython built but run failed: " + chk.stderr.strip()[:200])
     else:
         if platform.system() == "Windows":
             hint = "install Microsoft C++ Build Tools"
