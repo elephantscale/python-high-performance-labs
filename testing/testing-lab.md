@@ -2,6 +2,8 @@
 
 > **Lab tier — optional:** take-home / cover if time allows.
 
+> **Working directory:** do the simulator labs (modeling -> testing -> timing -> profiling -> numpy -> cython) in **one folder**, and run scripts from inside it. `simul.py` is created in the modeling lab and reused here, so `import simul` works without copying it between folders.
+
 * Prepare the tests for the code, lay the foundation for optimization
 
 ## Lab Goals:

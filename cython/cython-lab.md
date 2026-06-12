@@ -2,6 +2,8 @@
 
 > **Lab tier — demo:** your instructor runs this live; hands-on is optional/take-home.
 
+> **Working directory:** do the simulator labs (modeling -> testing -> timing -> profiling -> numpy -> cython) in **one folder**, and run scripts from inside it. `simul.py` is created in the modeling lab and reused here, so `import simul` works without copying it between folders.
+
 * Compile a hot function to native code and measure the speedup
 
 ## Lab Goals:
