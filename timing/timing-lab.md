@@ -106,12 +106,27 @@ from benchmark import benchmark
 
 ### Windows user advice
 
-The `time` command is not available for Windows. 
+The Unix `time` command is not available on Windows. Use one of these instead
+(all run from the **Anaconda Prompt** you already have open):
 
-To install Unix tools, such as time, on Windows you can use the cygwin shell, 
-downloadable from the official website 
-(http://www.cygwin.com/).
- 
-Alternatively, you can use similar PowerShell commands, such as Measure-Command 
-(https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/measure-command). 
+**1) PowerShell's `Measure-Command` — the closest to `time`:**
+
+```shell script
+powershell -Command "Measure-Command { python benchmark.py }"
+```
+
+Read the `TotalSeconds` line — that is the wall-clock time (like `real`).
+
+**2) `python -m timeit` — built in and cross-platform:**
+
+```shell script
+python -m timeit -n 1 -r 1 -s "from benchmark import benchmark" "benchmark()"
+```
+
+`-n 1 -r 1` runs the function once.
+
+**3) IPython `%timeit`** — exactly Step 3 above; works the same on Windows.
+
+The portable way is really #2/#3 (`timeit`), which is the lesson here — Unix
+`time` is just a convenience wrapper for wall-clock time.
 
